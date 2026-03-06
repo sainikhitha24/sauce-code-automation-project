@@ -15,6 +15,13 @@ public class ProductNavigationTest extends BaseTest {
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addBackpackToCart();
 
+        try {
+
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         Assert.assertEquals(productsPage.getCartItemCount(), "1", "Cart item count should be 1.");
     }
 }
